@@ -31,6 +31,8 @@ const TintoBlockEntry = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 
   const deleteElement = () => {
     setOpen(false);
+    console.log('here')
+    console.log(props.item.id)
     props.removeTintoBlockEntry(props.item.id)
   }
 
@@ -94,7 +96,7 @@ const TintoBlockEntry = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            {props.item.tinto_block.type} - {props.item.tinto_block.title}
+            {props.item.tinto_block.type.label} - {props.item.tinto_block.title}
           </DialogContentText>
         </DialogContent>
         <DialogActions>

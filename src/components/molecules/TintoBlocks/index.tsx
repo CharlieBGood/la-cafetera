@@ -88,7 +88,8 @@ const TintoBlocks: React.FC<TintoBlocksProps>= ({tintoId, getTintoBlocksEntries,
       if (tintoId){
         getTintoBlocksEntries()
       }
-    }, [tintoId, getTintoBlocksEntries])
+    // eslint-disable-next-line
+    }, [tintoId])
   
     return(
         <Paper variant="outlined" sx={{padding: '20px', borderRadius: '12px', textAlign: 'center'}}>
