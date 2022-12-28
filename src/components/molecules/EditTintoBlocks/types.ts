@@ -1,9 +1,17 @@
-export type DefaultValues = {
+export type EditTintoBlockValues = {
   id: number,
   html: string,
   title: string,
   type: number,
-  news_type: number | null,
+  news_type: number | undefined,
+}
+
+export type DefaultValues = {
+  id: number,
+  html: string,
+  title: string,
+  type: TintoBlockEntryTypeProps,
+  news_type: NewsTypeProps | undefined,
 }
 
 export type EditTintoBlocksProps = {
@@ -25,3 +33,4 @@ export type NewsTypeProps = {
   name: string,
   label: string
 }
+

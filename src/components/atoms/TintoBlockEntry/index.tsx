@@ -31,7 +31,6 @@ const TintoBlockEntry = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
 
   const deleteElement = () => {
     setOpen(false);
-    console.log('here')
     console.log(props.item.id)
     props.removeTintoBlockEntry(props.item.id)
   }
