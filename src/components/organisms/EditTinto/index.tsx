@@ -23,7 +23,7 @@ const EditTinto = () => {
   }
 
   const routeChange = () => {
-    navigate('/crear-correo/1')
+    navigate(`/crear-correo/${id}`)
   }
 
 
