@@ -92,6 +92,7 @@ const EditTintoBlocks: React.FC<EditTintoBlocksProps> = ({
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
+        disableEnforceFocus={true}
       >
         <FormContainer
           defaultValues={defaultValues ? handleNullDefaultValues(defaultValues) : {}}
@@ -99,8 +100,8 @@ const EditTintoBlocks: React.FC<EditTintoBlocksProps> = ({
         >
           <DialogContent>
               <Stack direction={'column'} spacing={2}>
-                <WYSIWYGEditor name="html" />
                 <TextFieldElement name="title" label="Título" required/>
+                <WYSIWYGEditor name="html" />
                 <SelectElement
                   name="type"
                   label="Tipo"
@@ -110,7 +111,7 @@ const EditTintoBlocks: React.FC<EditTintoBlocksProps> = ({
                 />
                 <SelectElement
                   name="news_type"
-                  label="Tipo de noticia"
+                  label="Tipo de historia"
                   options={newsTypesOptions}
                   sx={{display: displayNewsTypesOptions}}
                 />

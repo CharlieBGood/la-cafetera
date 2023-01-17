@@ -33,7 +33,7 @@ const ViewTinto: React.FC<ViewTintoProps>= ({tintoBlocks}) => {
   return(
     <Paper variant="outlined" sx={{borderRadius: '12px', textAlign: 'center', border: '0'}}>
       <Editor
-        apiKey={process.env.REACT_APP_TINYMCE_API}
+        tinymceScriptSrc={process.env.PUBLIC_URL + "/tinymce/tinymce.min.js"}
         initialValue={displayValue}
         init={{
           height: 1000,

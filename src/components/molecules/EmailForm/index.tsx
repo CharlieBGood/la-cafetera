@@ -17,7 +17,7 @@ const emailVersionOptions = [
     {id: 'DEFAULT', label: 'Testeo en blanco'}
 ]
 
-const EmailForm: React.FC<EmailFormProps> = ({tintoId, createNewMail}) => {
+const EmailForm: React.FC<EmailFormProps> = ({tintoId, createNewMail, tintoSubject}) => {
 
     const onSubmit = (data: any) => {
         createNewMail(data);
@@ -65,6 +65,9 @@ const EmailForm: React.FC<EmailFormProps> = ({tintoId, createNewMail}) => {
                     name="dispatch_date"
                     required
                     inputProps={{sx: {width: '100%', margin: '0 0 20px 0'}}}
+                    componentsProps={{
+                        actionBar: { actions: ["today"] },
+                     }}
                 />
                 <TextFieldElement 
                     name="tweet"

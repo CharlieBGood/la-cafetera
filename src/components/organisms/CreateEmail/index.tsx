@@ -1,7 +1,7 @@
 import { Accordion, AccordionDetails, AccordionSummary, Box, Stack, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useParams, Link, redirect } from "react-router-dom";
-import { fetchTintoBlocksEntries, createMail } from "../../../services";
+import { fetchTintoBlocksEntries, createMail, getTinto } from "../../../services";
 import ViewTinto from "../../molecules/ViewTinto";
 import EmailForm from "../../molecules/EmailForm";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -24,6 +24,7 @@ const TintoLink = styled(Link)`
 const CreateEmail = () => {
 
   const [tintoBlocks, setTintoBlocks] = useState<[]>([])
+  const [tintoSubject, setTintoSubject] = useState<string>('')
 
   const { tintoId } = useParams() as { tintoId: string };
 
@@ -37,6 +38,11 @@ const CreateEmail = () => {
     fetchTintoBlocksEntries(tintoId)
     .then(response => setTintoBlocks(response.data))
     .catch(error => console.log(error))
+
+    getTinto(tintoId)
+    .then(response => setTintoSubject(response.data.name))
+    .catch(error => console.log(error))
+
   }, [tintoId])
   
   return (
@@ -65,7 +71,7 @@ const CreateEmail = () => {
           </Stack>
           </AccordionDetails>
         </Accordion>
-        <EmailForm tintoId={tintoId} createNewMail={createNewMail}/>
+        <EmailForm tintoId={tintoId} createNewMail={createNewMail} tintoSubject={tintoSubject}/>
       </Stack>
     </Box>    
   )

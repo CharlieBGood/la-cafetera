@@ -20,12 +20,76 @@ const WYSIWYGEditor = ({ name }: HtmlEditorProps) => {
 
   return (
       <Editor
-        apiKey={process.env.REACT_APP_TINYMCE_API}
+        tinymceScriptSrc={process.env.PUBLIC_URL + "/tinymce/tinymce.min.js"}
         {...field}
         onEditorChange={onChange}
         init={{
-          plugins: 'link image code preview',
-          toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code preview'
+          plugins: 'link image code preview quickbars',
+          toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | preview | image',
+          quickbars_selection_toolbar: 'bold italic | quicklink h1 h2 h3 blockquote',
+          quickbars_image_toolbar: 'alignleft aligncenter alignright',
+          content_style: `
+            body {
+              font-family: Arial;
+            }
+            h1 {
+              font-size: 46px;
+            }
+            h2 {
+              font-size: 20px;
+            }
+            h3 {
+              font-size: 18px;
+              line-height: 150%;
+            }
+            p {
+                line-height: 150%;
+                font-size: 16px;
+            }
+            li {
+                font-size: 16px;
+            }
+            a {
+              color: #348286;
+            }
+            a div {
+              background-color: #5044e4; 
+              border-radius: 12px; 
+              height: 45px;
+              color: #FFFFFF;
+              font-size: 18px;
+              border: none;
+              cursor: pointer;
+            }
+            .logo-subtitle{
+              text-align: center;
+              font-size: 23px;
+              font-family: 'Raleway'
+            }
+            .logo-title{
+              display: block;
+              margin: 20px auto;
+              width: 60%
+            }
+            .main {
+              padding: 20px 0;
+            }
+            @media only screen and (min-width: 768px) {
+              .main {
+                padding: 20px 20%;
+              }
+              .logo-title{
+                display: block;
+                margin: 40px auto 20px auto;
+                width: 40%
+              }
+              .logo-subtitle{
+                text-align: center;
+                font-size: 28px;
+                font-family: 'Raleway'
+              }
+            }
+          `
         }}
       />
   );

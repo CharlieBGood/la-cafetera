@@ -61,7 +61,11 @@ const TintoBlockEntry = React.forwardRef<HTMLDivElement, Props>((props, ref) => 
         </TableCell>
         <TableCell align="center" sx={{maxWidth: '40px'}}>
           <Typography noWrap sx={{ textOverflow: 'ellipsis'}}>
-            {props.item.position}. {props.item.tinto_block.type.label} - {props.item.tinto_block.title}
+            {
+              props.item.tinto_block.type.name === 'News' 
+              ? `${props.item.position}. ${props.item.tinto_block.news_type.label} - ${props.item.tinto_block.title}`
+              : `${props.item.position}. ${props.item.tinto_block.type.label} - ${props.item.tinto_block.title}`
+            }
           </Typography>
         </TableCell>
         <TableCell align="center">
