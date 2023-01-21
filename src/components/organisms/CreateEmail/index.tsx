@@ -1,8 +1,8 @@
 import { Accordion, AccordionDetails, AccordionSummary, Box, Stack, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
-import { useParams, Link, redirect } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { fetchTintoBlocksEntries, createMail, getTinto } from "../../../services";
-import ViewTinto from "../../molecules/ViewTinto";
+import ViewTinto from "../../atoms/ViewTinto";
 import EmailForm from "../../molecules/EmailForm";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import styled from "styled-components";

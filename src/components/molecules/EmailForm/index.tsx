@@ -1,4 +1,4 @@
-import { Button, Paper } from "@mui/material";
+import { Button, Paper, TextField } from "@mui/material";
 import { FormContainer, TextFieldElement, SelectElement, DateTimePickerElement } from "react-hook-form-mui";
 import DateFnsProvider from "../../atoms/DateFnsProvider";
 import { EmailFormProps } from "./types";
@@ -60,26 +60,29 @@ const EmailForm: React.FC<EmailFormProps> = ({tintoId, createNewMail, tintoSubje
                     options={emailVersionOptions}
                     sx={{width: '100%', margin: '0 0 20px 0', textAlign: 'left'}}
                 />
-                <DateTimePickerElement
-                    label="Fecha de despacho"
+                <TextFieldElement
                     name="dispatch_date"
+                    label="Fecha de despacho"
+                    type="datetime-local"
+                    sx={{width: '100%', margin: '0 0 20px 0'}}
                     required
-                    inputProps={{sx: {width: '100%', margin: '0 0 20px 0'}}}
-                    componentsProps={{
-                        actionBar: { actions: ["today"] },
-                     }}
+                    InputLabelProps={{
+                    shrink: true,
+                    }}
                 />
                 <TextFieldElement 
                     name="tweet"
                     label="Tweet"
                     sx={{width: '100%', margin: '0 0 20px 0'}}
                     required
+                    inputProps={{ maxLength: 226 }}
                 />
                 <TextFieldElement 
                     name="subject_message"
                     label="Mesaje del asunto"
                     sx={{width: '100%', margin: '0 0 20px 0'}}
                     required
+                    inputProps={{ maxLength: 256 }}
                 />
                 <Button autoFocus variant="contained" type={'submit'}>
                     Crear

@@ -24,10 +24,11 @@ const WYSIWYGEditor = ({ name }: HtmlEditorProps) => {
         {...field}
         onEditorChange={onChange}
         init={{
-          plugins: 'link image code preview quickbars',
+          plugins: 'link image code preview quickbars emoticons',
           toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | preview | image',
           quickbars_selection_toolbar: 'bold italic | quicklink h1 h2 h3 blockquote',
           quickbars_image_toolbar: 'alignleft aligncenter alignright',
+          quickbars_insert_toolbar: 'image link emoticons code',
           content_style: `
             body {
               font-family: Arial;

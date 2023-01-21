@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import { useNavigate, useParams } from 'react-router-dom';
 import TintoBlocks from '../../molecules/TintoBlocks';
-import ViewTinto from '../../molecules/ViewTinto';
+import ViewTinto from '../../atoms/ViewTinto';
 import { Button, Stack } from '@mui/material';
 import { useState } from 'react';
 import { fetchTintoBlocksEntries } from '../../../services';
