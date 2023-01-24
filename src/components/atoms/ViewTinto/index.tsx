@@ -53,6 +53,7 @@ const ViewTinto: React.FC<ViewTintoProps>= ({tintoBlocks}) => {
             h3 {
               font-size: 18px;
               line-height: 150%;
+              font-weight: 400
             }
             p {
                 line-height: 150%;

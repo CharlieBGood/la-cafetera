@@ -1,5 +1,5 @@
-import { Button, Paper, TextField } from "@mui/material";
-import { FormContainer, TextFieldElement, SelectElement, DateTimePickerElement } from "react-hook-form-mui";
+import { Button, Paper } from "@mui/material";
+import { FormContainer, TextFieldElement, SelectElement } from "react-hook-form-mui";
 import DateFnsProvider from "../../atoms/DateFnsProvider";
 import { EmailFormProps } from "./types";
 
@@ -17,7 +17,7 @@ const emailVersionOptions = [
     {id: 'DEFAULT', label: 'Testeo en blanco'}
 ]
 
-const EmailForm: React.FC<EmailFormProps> = ({tintoId, createNewMail, tintoSubject}) => {
+const EmailForm: React.FC<EmailFormProps> = ({tintoId, createNewMail}) => {
 
     const onSubmit = (data: any) => {
         createNewMail(data);

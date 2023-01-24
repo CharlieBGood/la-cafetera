@@ -20,11 +20,9 @@ const TintoLink = styled(Link)`
     }
 `;
 
-
 const CreateEmail = () => {
 
   const [tintoBlocks, setTintoBlocks] = useState<[]>([])
-  const [tintoSubject, setTintoSubject] = useState<string>('')
 
   const { tintoId } = useParams() as { tintoId: string };
 
@@ -38,11 +36,6 @@ const CreateEmail = () => {
     fetchTintoBlocksEntries(tintoId)
     .then(response => setTintoBlocks(response.data))
     .catch(error => console.log(error))
-
-    getTinto(tintoId)
-    .then(response => setTintoSubject(response.data.name))
-    .catch(error => console.log(error))
-
   }, [tintoId])
   
   return (
@@ -71,7 +64,7 @@ const CreateEmail = () => {
           </Stack>
           </AccordionDetails>
         </Accordion>
-        <EmailForm tintoId={tintoId} createNewMail={createNewMail} tintoSubject={tintoSubject}/>
+        <EmailForm tintoId={tintoId} createNewMail={createNewMail} />
       </Stack>
     </Box>    
   )
