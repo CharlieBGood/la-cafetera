@@ -6,6 +6,10 @@ export const getTinto = (id: string | undefined) => {
     return axios.get(`/tintos/${id}/`)
 }
 
+export const getTintoMail = (id: string | undefined) => {
+    return axios.get(`/tintos/${id}/mail/`)
+}
+
 export const fetchTintoBlocksEntries = (id: string) => {
     return axios.get(`tintos/${id}/blocks-entries/`);
 };

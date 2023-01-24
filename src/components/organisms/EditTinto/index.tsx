@@ -4,7 +4,7 @@ import TintoBlocks from '../../molecules/TintoBlocks';
 import ViewTinto from '../../atoms/ViewTinto';
 import { Button, Stack } from '@mui/material';
 import { useState } from 'react';
-import { fetchTintoBlocksEntries } from '../../../services';
+import { fetchTintoBlocksEntries, getTintoMail } from '../../../services';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
 
@@ -23,7 +23,13 @@ const EditTinto = () => {
   }
 
   const routeChange = () => {
-    navigate(`/crear-correo/${id}`)
+    getTintoMail(id)
+    .then(() => window.location.assign(`${process.env.REACT_APP_EL_TINTO_BASE_API}/cafetera/mails/mail/`))
+    .catch(error => {
+      if (error.response.status === 404){
+        navigate(`/crear-correo/${id}`)
+      }
+    })
   }
 
 

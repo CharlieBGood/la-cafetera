@@ -29,6 +29,7 @@ const WYSIWYGEditor = ({ name }: HtmlEditorProps) => {
           quickbars_selection_toolbar: 'bold italic | quicklink h1 h2 h3 blockquote',
           quickbars_image_toolbar: 'alignleft aligncenter alignright',
           quickbars_insert_toolbar: 'image link emoticons code',
+          paste_webkit_styles: 'color font-weight font-style',
           content_style: `
             body {
               font-family: Arial;
@@ -42,6 +43,7 @@ const WYSIWYGEditor = ({ name }: HtmlEditorProps) => {
             h3 {
               font-size: 18px;
               line-height: 150%;
+              font-weight: 400
             }
             p {
                 line-height: 150%;
