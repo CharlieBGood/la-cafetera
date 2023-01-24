@@ -30,6 +30,9 @@ const WYSIWYGEditor = ({ name }: HtmlEditorProps) => {
           quickbars_image_toolbar: 'alignleft aligncenter alignright',
           quickbars_insert_toolbar: 'image link emoticons code',
           paste_webkit_styles: 'color font-weight font-style',
+          relative_urls: false,
+          remove_script_host: false,
+          document_base_url: process.env.REACT_APP_EL_TINTO_BASE_API,
           content_style: `
             body {
               font-family: Arial;
