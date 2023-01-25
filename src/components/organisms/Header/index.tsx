@@ -38,7 +38,7 @@ const Header = () => {
     <AppBar position="static" sx={{backgroundColor: '#FFFFFF'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img src="https://el-tinto-utils.s3.amazonaws.com/logo.png" height="24" alt='logo' />
+          <img src="https://el-tinto-utils.s3.amazonaws.com/logos/el_tinto_image.png" height="30" alt='logo' />
           <Typography
             variant="h6"
             noWrap
@@ -83,11 +83,6 @@ const Header = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {/* {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))} */}
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
