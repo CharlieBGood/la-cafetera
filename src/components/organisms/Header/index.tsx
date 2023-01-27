@@ -38,7 +38,7 @@ const Header = () => {
     <AppBar position="static" sx={{backgroundColor: '#FFFFFF'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img src="https://el-tinto-utils.s3.amazonaws.com/logos/el_tinto_image.png" height="30" alt='logo' />
+          <img src="https://el-tinto-utils.s3.amazonaws.com/logos/el_tinto_imagen_sin_espacios.png" height="30" alt='logo' />
           <Typography
             variant="h6"
             noWrap
