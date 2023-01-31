@@ -32,6 +32,7 @@ const WYSIWYGEditor = ({ name }: HtmlEditorProps) => {
           paste_webkit_styles: 'color font-weight font-style',
           relative_urls: false,
           remove_script_host: false,
+          image_caption: true,
           document_base_url: process.env.REACT_APP_EL_TINTO_BASE_API,
           content_style: `
             body {
@@ -56,7 +57,7 @@ const WYSIWYGEditor = ({ name }: HtmlEditorProps) => {
                 font-size: 16px;
             }
             a {
-              color: #348286;
+              color: #fca311;
             }
             a div {
               background-color: #5044e4; 

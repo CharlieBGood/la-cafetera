@@ -63,7 +63,7 @@ const ViewTinto: React.FC<ViewTintoProps>= ({tintoBlocks}) => {
                 font-size: 16px;
             }
             a {
-              color: #348286;
+              color: #fca311;
             }
             a div {
               background-color: #5044e4; 
