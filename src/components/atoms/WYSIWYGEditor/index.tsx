@@ -33,8 +33,10 @@ const WYSIWYGEditor = ({ name }: HtmlEditorProps) => {
           relative_urls: false,
           remove_script_host: false,
           image_caption: true,
+          // allow ses tag in links when copying source code.
+          // Remove span tags when copying from google docs
           extended_valid_elements: "a[rel|rev|charset|hreflang|tabindex|accesskey|type|"
-          + "name|href|target|title|class|onfocus|onblur|ses:tags]",
+          + "name|href|target|title|class|onfocus|onblur|ses:tags], -span[style]",
           document_base_url: process.env.REACT_APP_EL_TINTO_BASE_API,
           content_style: `
             body {
