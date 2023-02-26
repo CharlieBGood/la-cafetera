@@ -38,6 +38,7 @@ const ViewTinto: React.FC<ViewTintoProps>= ({tintoBlocks}) => {
         init={{
           height: 1000,
           menubar: false,
+          language: 'es',
           plugins: 'link image code preview',
           toolbar: 'preview',
           content_style: `
