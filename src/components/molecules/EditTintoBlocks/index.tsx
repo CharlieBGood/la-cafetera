@@ -4,6 +4,7 @@ import {FormContainer, TextFieldElement, SelectElement} from 'react-hook-form-mu
 import WYSIWYGEditor from "../../atoms/WYSIWYGEditor";
 import { EditTintoBlocksProps, TintoBlockEntryTypeProps, NewsTypeProps, DefaultValues, EditTintoBlockValues } from "./types";
 import { getTintoBlockEntryTypes, getNewsTypes } from "../../../services";
+import { Toaster, toast } from "react-hot-toast";
 
 
 const EditTintoBlocks: React.FC<EditTintoBlocksProps> = ({
@@ -18,7 +19,10 @@ const EditTintoBlocks: React.FC<EditTintoBlocksProps> = ({
     if (displayNewsTypesOptions === 'none'){
       data.news_type = undefined
     }
-    if (createNewTintoBlock){
+    if (typeof data.type === 'number' && data.type === 1 && (data.news_type === undefined || null)){
+      toast.error('Debes seleccionar un tipo de historia.')
+    }
+    else if (createNewTintoBlock){
       createNewTintoBlock(data)
     }
     else if (editTintoBlock){
@@ -124,6 +128,10 @@ const EditTintoBlocks: React.FC<EditTintoBlocksProps> = ({
           </DialogActions>
         </FormContainer>
       </Dialog>
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+      />
     </div>
   )
 }
