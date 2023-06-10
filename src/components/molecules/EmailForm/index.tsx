@@ -6,6 +6,7 @@ import { EmailFormProps } from "./types";
 
 const emailTypeOptions = [
     {id: 'Daily', label: 'Diario'},
+    {id: 'Sunday', label: 'Dominguero'},
     {id: 'Test', label: 'Prueba'},
     {id: 'Promotion', label: 'Promoción'},
     {id: 'Welcome', label: 'Bienvenida'}
