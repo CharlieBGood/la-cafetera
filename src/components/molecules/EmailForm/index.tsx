@@ -1,4 +1,4 @@
-import { Button, Paper } from "@mui/material";
+import { Button, Paper, Typography } from "@mui/material";
 import { FormContainer, TextFieldElement, SelectElement } from "react-hook-form-mui";
 import DateFnsProvider from "../../atoms/DateFnsProvider";
 import { EmailFormProps } from "./types";
@@ -43,24 +43,6 @@ const EmailForm: React.FC<EmailFormProps> = ({tintoId, createNewMail}) => {
                     sx={{width: '100%', margin: '0 0 20px 0'}}
                     required
                 />
-                <SelectElement 
-                    name="type"
-                    label="Tipo de correo"
-                    options={emailTypeOptions}
-                    sx={{width: '100%', margin: '0 0 20px 0', textAlign: 'left'}}
-                    required
-                />
-                <TextFieldElement 
-                    name="test_email"
-                    label="Correo de prueba"
-                    sx={{width: '100%', margin: '0 0 20px 0'}}
-                />
-                <SelectElement 
-                    name="version"
-                    label="Versión del correo"
-                    options={emailVersionOptions}
-                    sx={{width: '100%', margin: '0 0 20px 0', textAlign: 'left'}}
-                />
                 <TextFieldElement
                     name="dispatch_date"
                     label="Fecha de despacho"
@@ -84,6 +66,26 @@ const EmailForm: React.FC<EmailFormProps> = ({tintoId, createNewMail}) => {
                     sx={{width: '100%', margin: '0 0 20px 0'}}
                     required
                     inputProps={{ maxLength: 256 }}
+                />
+                <Typography style={{margin: "20px 0 10px 0", textAlign: "left", fontSize: "24px"}}>
+                    Opcionales
+                </Typography>
+                <TextFieldElement 
+                    name="test_email"
+                    label="Correo de prueba"
+                    sx={{width: '100%', margin: '0 0 20px 0'}}
+                />
+                <SelectElement 
+                    name="version"
+                    label="Versión del correo"
+                    options={emailVersionOptions}
+                    sx={{width: '100%', margin: '0 0 20px 0', textAlign: 'left'}}
+                />
+                <SelectElement 
+                    name="type"
+                    label="Tipo de correo"
+                    options={emailTypeOptions}
+                    sx={{width: '100%', margin: '0 0 20px 0', textAlign: 'left'}}
                 />
                 <Button autoFocus variant="contained" type={'submit'}>
                     Crear
