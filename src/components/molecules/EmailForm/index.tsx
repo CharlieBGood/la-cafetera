@@ -75,6 +75,16 @@ const EmailForm: React.FC<EmailFormProps> = ({tintoId, createNewMail}) => {
                     label="Correo de prueba"
                     sx={{width: '100%', margin: '0 0 20px 0'}}
                 />
+                <TextFieldElement 
+                    name="sponsor_image_url"
+                    label="Imágen del patrocinador (URL)"
+                    sx={{width: '100%', margin: '0 0 20px 0'}}
+                />
+                <TextFieldElement 
+                    name="sponsor_web_url"
+                    label="Web del patrocinador (URL)"
+                    sx={{width: '100%', margin: '0 0 20px 0'}}
+                />
                 <SelectElement 
                     name="version"
                     label="Versión del correo"
